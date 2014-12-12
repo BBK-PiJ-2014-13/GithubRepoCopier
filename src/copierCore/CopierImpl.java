@@ -2,7 +2,7 @@ package copierCore;
 
 import com.jcabi.github.Repo;
 
-public class CopierMock implements Copier{
+public class CopierImpl implements Copier{
 	private Repo repo;
 	
 	@Override
