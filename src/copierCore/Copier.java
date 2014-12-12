@@ -1,5 +1,5 @@
 
-package CopierCore;
+package copierCore;
 
 import com.jcabi.github.Repo;
 

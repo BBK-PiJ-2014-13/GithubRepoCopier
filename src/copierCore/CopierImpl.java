@@ -1,4 +1,4 @@
-package CopierCore;
+package copierCore;
 
 public class CopierImpl {
 
