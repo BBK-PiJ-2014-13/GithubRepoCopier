@@ -12,6 +12,7 @@ import com.jcabi.github.Repo;
  */
 public interface Copier {
 	/**
+	 * @param s repository address
 	 * @return the requested repository
 	 */
 	public Repo getRepo(String s);
