@@ -6,7 +6,7 @@ public class CopierImpl implements Copier{
 	private Repo repo;
 	
 	@Override
-	public Repo getRepo() {
+	public Repo getRepo(String s) {
 		return repo;
 	}
 

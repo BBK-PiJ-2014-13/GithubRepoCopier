@@ -14,5 +14,5 @@ public interface Copier {
 	/**
 	 * @return the requested repository
 	 */
-	public Repo getRepo();
+	public Repo getRepo(String s);
 }
