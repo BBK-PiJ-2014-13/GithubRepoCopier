@@ -14,10 +14,10 @@ public class CopierTest extends BasicTest {
 	@Test
 	public void testsGetRepo() {
 		copier = new CopierImpl();
+		valueActual = copier.getRepo("BBK-PiJ-2014-13/Test");
+		
 		github = new RtGithub();
-		Repo repo = github.repos().get(new Coordinates.Simple("BBK-PiJ-2014-13/cw3"));
-		valueExpected = repo;
-		valueActual = copier.getRepo("BBK-PiJ-2014-13/cw3");
+		valueExpected = github.repos().get(new Coordinates.Simple("BBK-PiJ-2014-13/Test"));
 		test();
 	}
 	
