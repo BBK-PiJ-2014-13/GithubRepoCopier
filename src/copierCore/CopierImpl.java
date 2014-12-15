@@ -13,29 +13,33 @@ import com.jcabi.github.Coordinates;
 import com.jcabi.github.Github;
 import com.jcabi.github.Repo;
 import com.jcabi.github.RtGithub;
+import com.jcabi.log.Logger;
 
-public class CopierImpl implements Copier{
-	
+public class CopierImpl implements Copier {
+
 	@Override
-	@Loggable
 	public Repo getRepo(String s) {
 		Github github = new RtGithub();
 		Repo repo = github.repos().get(new Coordinates.Simple(s));
 		Contents contents = repo.contents();
-		
+
 		try {
-			Content content = contents.get("./test.txt");
+			Content content = contents.get("test.txt");
 			InputStream inputStream = content.raw();
 			byte[] buffer = new byte[inputStream.available()];
 			inputStream.read(buffer);
-			
+
 			File testFile = new File("targetFileTest.txt");
 			OutputStream outputStream = new FileOutputStream(testFile);
 			outputStream.write(buffer);
+			outputStream.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
 
+	void bar(int value) {
+		Logger.debug(this, "method #bar(%d) was called", value);
+	}
 }
