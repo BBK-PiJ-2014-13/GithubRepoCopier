@@ -1,6 +1,7 @@
 
 package copierCore;
 
+import com.jcabi.github.Contents;
 import com.jcabi.github.Repo;
 
 /**
@@ -14,4 +15,10 @@ public interface Copier {
 	 * @return the requested repository
 	 */
 	public Repo getRepo(String s);
+	
+	/**
+	 * @param r target repository
+	 * @return contents of target repository
+	 */
+	public Contents getContents(Repo r);
 }
