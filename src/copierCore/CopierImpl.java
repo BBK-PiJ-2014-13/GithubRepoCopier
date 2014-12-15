@@ -29,7 +29,7 @@ public class CopierImpl implements Copier {
 			byte[] buffer = new byte[inputStream.available()];
 			inputStream.read(buffer);
 
-			File testFile = new File("targetFileTest.txt");
+			File testFile = new File("copiedFile.txt");
 			OutputStream outputStream = new FileOutputStream(testFile);
 			outputStream.write(buffer);
 			outputStream.close();
