@@ -10,7 +10,7 @@ public class CopierImpl implements Copier{
 	@Override
 	public Repo getRepo(String s) {
 		Github github = new RtGithub();
-		Repo repo = github.repos().get(new Coordinates.Simple("BBK-PiJ-2014-13/cw3"));
+		Repo repo = github.repos().get(new Coordinates.Simple("BBK-PiJ-2014-13/test"));
 		return repo;
 	}
 
