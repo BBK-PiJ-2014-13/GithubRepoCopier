@@ -39,5 +39,6 @@ public class CopierTest extends BasicTest {
 		copier = new CopierImpl();
 		github = new RtGithub();
 		repo = github.repos().get(new Coordinates.Simple("BBK-PiJ-2014-13/Test"));
+		test();
 	}
 }
