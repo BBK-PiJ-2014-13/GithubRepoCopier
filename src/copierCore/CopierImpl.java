@@ -1,5 +1,11 @@
 package copierCore;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
 import com.jcabi.github.Content;
 import com.jcabi.github.Contents;
 import com.jcabi.github.Coordinates;
@@ -14,8 +20,19 @@ public class CopierImpl implements Copier{
 		Github github = new RtGithub();
 		Repo repo = github.repos().get(new Coordinates.Simple("BBK-PiJ-2014-13/test"));
 		Contents contents = repo.contents();
-		Content content = contents.get("./text.txt");
 		
+		try {
+			Content content = contents.get("./text.txt");
+			InputStream inputStream = content.raw();
+			byte[] buffer = new byte[inputStream.available()];
+			inputStream.read(buffer);
+			
+			File testFile = new File("targetFileTest.txt");
+			OutputStream outputStream = new FileOutputStream(testFile);
+			outputStream.write(buffer);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		return null;
 	}
 
