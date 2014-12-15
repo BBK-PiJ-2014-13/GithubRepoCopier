@@ -1,6 +1,8 @@
 
 package copierCore;
 
+import java.io.InputStream;
+
 import com.jcabi.github.Contents;
 import com.jcabi.github.Repo;
 
@@ -21,4 +23,11 @@ public interface Copier {
 	 * @return contents of target repository
 	 */
 	public Contents getContents(Repo r);
+	
+	/**
+	 * @param is InputStream that need to be written into a file
+	 * @param s Path where the file needs to be written
+	 */
+	public void writeStream(InputStream is, String s);
+	
 }
