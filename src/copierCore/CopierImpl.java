@@ -1,7 +1,9 @@
 package copierCore;
 
 import java.io.InputStream;
+import java.util.Iterator;
 
+import com.jcabi.github.Content;
 import com.jcabi.github.Contents;
 import com.jcabi.github.Coordinates;
 import com.jcabi.github.Github;
@@ -29,7 +31,7 @@ public class CopierImpl implements Copier {
 	}
 
 	@Override
-	public void getIterator(Contents c, String path, String branch) {
+	public Iterator<Content> getIterator(Contents c, String path, String branch) {
 		// TODO Auto-generated method stub
 		
 	}
