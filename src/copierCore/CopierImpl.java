@@ -28,4 +28,10 @@ public class CopierImpl implements Copier {
 		
 	}
 
+	@Override
+	public void getIterator(Contents c) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
