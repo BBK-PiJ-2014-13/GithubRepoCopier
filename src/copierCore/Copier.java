@@ -2,7 +2,9 @@
 package copierCore;
 
 import java.io.InputStream;
+import java.util.Iterator;
 
+import com.jcabi.github.Content;
 import com.jcabi.github.Contents;
 import com.jcabi.github.Repo;
 
@@ -33,6 +35,6 @@ public interface Copier {
 	/**
 	 * @param c Contents from which an Iterator must be created
 	 */
-	public void getIterator(Contents c, String path, String branch);
+	public Iterator<Content> getIterator(Contents c, String path, String branch);
 	
 }
