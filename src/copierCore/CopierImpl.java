@@ -1,19 +1,10 @@
 package copierCore;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-
-import com.jcabi.aspects.Loggable;
-import com.jcabi.github.Content;
 import com.jcabi.github.Contents;
 import com.jcabi.github.Coordinates;
 import com.jcabi.github.Github;
 import com.jcabi.github.Repo;
 import com.jcabi.github.RtGithub;
-import com.jcabi.log.Logger;
 
 public class CopierImpl implements Copier {
 
