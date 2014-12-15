@@ -1,5 +1,6 @@
 package copierCore;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.Iterator;
 
@@ -32,9 +33,13 @@ public class CopierImpl implements Copier {
 
 	@Override
 	public Iterator<Content> getIterator(Contents c, String path, String branch) {
-		return null;
-		// TODO Auto-generated method stub
-		
+		Iterator<Content> result = null;
+		try {
+			result =  c.iterate(path, branch).iterator();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 }
