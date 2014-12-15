@@ -32,4 +32,9 @@ public class CopierTest extends BasicTest {
 		valueExpected = repo.contents();
 		test();
 	}
+	
+	@Test
+	public void testsWriteStream() {
+		
+	}
 }
