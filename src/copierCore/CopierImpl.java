@@ -41,8 +41,7 @@ public class CopierImpl implements Copier {
 
 	@Override
 	public Contents getContents(Repo r) {
-		// TODO Auto-generated method stub
-		return null;
+		return r.contents();
 	}
 
 }
