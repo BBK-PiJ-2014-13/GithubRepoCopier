@@ -4,9 +4,7 @@ package copierCore;
 import com.jcabi.github.Repo;
 
 /**
- * Copies repositories from Github and returns them wrapped in an object
- * 
- * Stores repository address as a String
+ * Copies root folder from a Github repository to a local directory
  * 
  * @author Ilya Ivanov
  */
