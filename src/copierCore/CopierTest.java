@@ -51,9 +51,9 @@ public class CopierTest extends BasicTest {
 		github = new RtGithub();
 		repo = github.repos().get(new Coordinates.Simple("BBK-PiJ-2014-13/Test"));
 		Contents contents = repo.contents();
-		valueActual = copier.getIterator(contents, "", "master");
+		valueActual = copier.getIterator(contents, "", "master").next();
 		
-		valueExpected = repo.contents().iterate("", "master");
+		valueExpected = repo.contents().iterate("", "master").iterator().next();
 		test();
 	}
 }
