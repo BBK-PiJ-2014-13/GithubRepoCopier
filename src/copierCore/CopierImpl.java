@@ -39,7 +39,4 @@ public class CopierImpl implements Copier {
 		return null;
 	}
 
-	void bar(int value) {
-		Logger.debug(this, "method #bar(%d) was called", value);
-	}
 }
