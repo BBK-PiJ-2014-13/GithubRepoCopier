@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import com.jcabi.aspects.Loggable;
 import com.jcabi.github.Content;
 import com.jcabi.github.Contents;
 import com.jcabi.github.Coordinates;
@@ -16,13 +17,14 @@ import com.jcabi.github.RtGithub;
 public class CopierImpl implements Copier{
 	
 	@Override
+	@Loggable
 	public Repo getRepo(String s) {
 		Github github = new RtGithub();
 		Repo repo = github.repos().get(new Coordinates.Simple(s));
 		Contents contents = repo.contents();
 		
 		try {
-			Content content = contents.get("./text.txt");
+			Content content = contents.get("./test.txt");
 			InputStream inputStream = content.raw();
 			byte[] buffer = new byte[inputStream.available()];
 			inputStream.read(buffer);
