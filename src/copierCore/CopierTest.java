@@ -10,6 +10,7 @@ import com.jcabi.github.RtGithub;
 public class CopierTest extends BasicTest {
 	CopierImpl copier;
 	Github github;
+	Repo repo;
 	
 	@Test
 	public void testsGetRepo() {
@@ -17,7 +18,7 @@ public class CopierTest extends BasicTest {
 		valueActual = copier.getRepo("BBK-PiJ-2014-13/Test");
 		
 		github = new RtGithub();
-		Repo repo = github.repos().get(new Coordinates.Simple("BBK-PiJ-2014-13/Test"));
+		repo = github.repos().get(new Coordinates.Simple("BBK-PiJ-2014-13/Test"));
 		valueExpected = repo;
 		test();
 	}
@@ -26,7 +27,7 @@ public class CopierTest extends BasicTest {
 	public void testsGetContents() {
 		copier = new CopierImpl();
 		github = new RtGithub();
-		Repo repo = github.repos().get(new Coordinates.Simple("BBK-PiJ-2014-13/Test"));
+		repo = github.repos().get(new Coordinates.Simple("BBK-PiJ-2014-13/Test"));
 		valueActual = copier.getContents(repo);
 
 		valueExpected = repo.contents();
@@ -37,6 +38,6 @@ public class CopierTest extends BasicTest {
 	public void testsWriteStream() {
 		copier = new CopierImpl();
 		github = new RtGithub();
-		Repo repo = github.repos().get(new Coordinates.Simple("BBK-PiJ-2014-13/Test"));
+		repo = github.repos().get(new Coordinates.Simple("BBK-PiJ-2014-13/Test"));
 	}
 }
