@@ -18,4 +18,9 @@ public class CopierTest extends BasicTest {
 		valueActual = copier.getRepo("BBK-PiJ-2014-13/cw3");
 		test();
 	}
+	
+	@Test
+	public void testsGetContents() {
+		
+	}
 }
