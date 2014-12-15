@@ -29,7 +29,7 @@ public class CopierImpl implements Copier {
 	}
 
 	@Override
-	public void getIterator(Contents c) {
+	public void getIterator(Contents c, String path, String branch) {
 		// TODO Auto-generated method stub
 		
 	}
