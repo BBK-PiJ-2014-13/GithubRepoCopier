@@ -8,11 +8,13 @@ import com.jcabi.github.Repo;
 import com.jcabi.github.RtGithub;
 
 public class CopierTest extends BasicTest {
-
+	CopierImpl copier;
+	Github github;
+	
 	@Test
 	public void testsGetRepo() {
-		CopierImpl copier = new CopierImpl();
-		Github github = new RtGithub();
+		copier = new CopierImpl();
+		github = new RtGithub();
 		Repo repo = github.repos().get(new Coordinates.Simple("BBK-PiJ-2014-13/cw3"));
 		valueExpected = repo;
 		valueActual = copier.getRepo("BBK-PiJ-2014-13/cw3");
