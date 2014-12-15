@@ -30,4 +30,9 @@ public interface Copier {
 	 */
 	public void writeStream(InputStream is, String s);
 	
+	/**
+	 * @param c Contents from which an Iterator must be created
+	 */
+	public void getIterator(Contents c, String path, String branch);
+	
 }
