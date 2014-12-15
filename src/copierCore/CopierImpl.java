@@ -1,5 +1,7 @@
 package copierCore;
 
+import java.io.InputStream;
+
 import com.jcabi.github.Contents;
 import com.jcabi.github.Coordinates;
 import com.jcabi.github.Github;
@@ -18,6 +20,12 @@ public class CopierImpl implements Copier {
 	@Override
 	public Contents getContents(Repo r) {
 		return r.contents();
+	}
+
+	@Override
+	public void writeStream(InputStream is, String s) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
