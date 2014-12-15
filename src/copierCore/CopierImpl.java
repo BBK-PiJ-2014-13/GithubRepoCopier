@@ -21,22 +21,7 @@ public class CopierImpl implements Copier {
 	public Repo getRepo(String s) {
 		Github github = new RtGithub();
 		Repo repo = github.repos().get(new Coordinates.Simple(s));
-		Contents contents = repo.contents();
-
-		try {
-			Content content = contents.get("test.txt");
-			InputStream inputStream = content.raw();
-			byte[] buffer = new byte[inputStream.available()];
-			inputStream.read(buffer);
-
-			File testFile = new File("copiedFile.txt");
-			OutputStream outputStream = new FileOutputStream(testFile);
-			outputStream.write(buffer);
-			outputStream.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return null;
+		return repo;
 	}
 
 	@Override
