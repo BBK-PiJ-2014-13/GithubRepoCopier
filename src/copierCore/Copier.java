@@ -34,13 +34,12 @@ public interface Copier {
 	public Contents getContents(Repo r);
 	
 	/**
-	 * Writes a stream of bytes into a file
+	 * Writes a Content object into a file
 	 * 
-	 * @param is InputStream that need to be written into a file
-	 * @param path Path where the file needs to be written
+	 * @param content Content object
 	 * @return File that was just written
 	 */
-	public File writeContent(InputStream is, String path);
+	public File writeContent(Content content);
 	
 	/**
 	 * Writes target directory in a repository into the local directory
