@@ -19,7 +19,7 @@ public interface Copier {
 	 * Launch method that executes all the needed methods to copy the target repository
 	 * @param s Path to the target repository
 	 */
-	public void copier(String s);
+	public void launch(String s);
 	
 	/**
 	 * @param s repository address
