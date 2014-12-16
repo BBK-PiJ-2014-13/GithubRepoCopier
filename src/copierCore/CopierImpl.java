@@ -47,16 +47,24 @@ public class CopierImpl implements Copier {
 		}
 		return new File(path);
 	}
-	
+
 	@Override
 	public void writeDirectory(Contents contents, String path) {
 		try {
-			Iterator<Content> directoryContents = getIterator(contents, path, branch)
+			Iterator<Content> directoryContents = getIterator(contents, path,
+					"master");
+
+			do {
+				File currentFile = new File(directoryContents.next().path());
+				Content currentFileContent = contents.get(currentFile.getPath());
+				InputStream currentFileStream = currentFileContent.raw();
+				writeStream(currentFileStream, path);
+			} while (directoryContents.hasNext());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@Override
 	public Iterator<Content> getIterator(Contents c, String path, String branch) {
 		Iterator<Content> result = null;
