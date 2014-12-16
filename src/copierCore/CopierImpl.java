@@ -39,7 +39,7 @@ public class CopierImpl implements Copier {
 			byte[] buffer = new byte[is.available()];
 			is.read(buffer);
 			File targetFile = new File(path);
-			OutputStream outputStream = new FileOutputStream(targetFile);
+			OutputStream outputStream = new FileOutputStream(path + targetFile.getName());
 			outputStream.write(buffer);
 			outputStream.close();
 		} catch (IOException e) {
@@ -58,7 +58,7 @@ public class CopierImpl implements Copier {
 				File currentFile = new File(directoryContents.next().path());
 				Content currentFileContent = contents.get(currentFile.getPath());
 				InputStream currentFileStream = currentFileContent.raw();
-				writeStream(currentFileStream, path);
+				writeStream(currentFileStream, getRepoName(contents.repo()) + "/" + path);
 			} while (directoryContents.hasNext());
 		} catch (IOException e) {
 			e.printStackTrace();
