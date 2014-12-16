@@ -31,7 +31,7 @@ public class CopierImpl implements Copier {
 	}
 
 	@Override
-	public void writeStream(InputStream is, String s) {
+	public void writeStream(InputStream is, String path) {
 		// TODO Auto-generated method stub
 		
 	}
