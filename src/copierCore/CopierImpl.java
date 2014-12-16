@@ -65,4 +65,10 @@ public class CopierImpl implements Copier {
 		return result;
 	}
 
+	@Override
+	public String getRepoName(Repo repo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
