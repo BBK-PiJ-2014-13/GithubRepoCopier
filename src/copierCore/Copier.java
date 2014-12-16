@@ -65,6 +65,8 @@ public interface Copier {
 	public String getRepoName(Repo repo);
 
 	/**
+	 * Returns list of directories contained in target directory
+	 * 
 	 * @param directory Directory that may contain other directories
 	 * @return ArrayList filled with directories or empty
 	 */
