@@ -49,8 +49,7 @@ public class CopierImpl implements Copier {
 	}
 	
 	@Override
-	public void writeDirectory() {
-		// TODO Auto-generated method stub
+	public void writeDirectory(Contents contents) {
 		
 	}
 	
