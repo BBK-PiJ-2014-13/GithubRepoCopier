@@ -36,9 +36,9 @@ public interface Copier {
 	 * Writes a stream of bytes into a file
 	 * 
 	 * @param is InputStream that need to be written into a file
-	 * @param s Path where the file needs to be written
+	 * @param path Path where the file needs to be written
 	 */
-	public void writeStream(InputStream is, String s);
+	public void writeStream(InputStream is, String path);
 	
 	/**
 	 * Returns an Iterator that holds Content objects
