@@ -114,7 +114,6 @@ public class CopierImpl implements Copier {
 		if (listOfDirectories.isEmpty()) {
 			return;
 		}
-		return false;
 	}
 
 }
