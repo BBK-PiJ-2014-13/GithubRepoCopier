@@ -85,7 +85,11 @@ public class CopierTest extends BasicTest {
 
 	@Test
 	public void testsWriteDirectory() throws IOException {
-		copier.writeDirectory();
+		copier = new CopierImpl();
+		github = new RtGithub();
+		repo = copier.getRepo("BBK-PiJ-2014-13/Test");
+		contents = copier.getContents(repo);
+		copier.writeDirectory(contents);
 		
 		File directory = new File("Test");
 		ArrayList<File> fileNames = new ArrayList<File>(Arrays.asList(directory.listFiles()));
