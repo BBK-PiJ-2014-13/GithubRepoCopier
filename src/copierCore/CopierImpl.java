@@ -102,4 +102,12 @@ public class CopierImpl implements Copier {
 		return resultList;
 	}
 
+
+	@Override
+	public boolean goThroughDirectories(boolean hasMoreDirectories,
+			String currentDirectory) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
