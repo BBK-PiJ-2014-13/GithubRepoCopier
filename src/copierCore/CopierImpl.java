@@ -1,8 +1,10 @@
 package copierCore;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.Iterator;
 
 import com.jcabi.github.Content;
@@ -13,10 +15,10 @@ import com.jcabi.github.Repo;
 import com.jcabi.github.RtGithub;
 
 public class CopierImpl implements Copier {
-	
+
 	@Override
 	public void copier(String s) {
-		
+
 	}
 
 	@Override
@@ -33,14 +35,24 @@ public class CopierImpl implements Copier {
 
 	@Override
 	public File writeStream(InputStream is, String path) {
-		return null;
+		try {
+			byte[] buffer = new byte[is.available()];
+			is.read(buffer);
+			File targetFile = new File(path);
+			OutputStream outputStream = new FileOutputStream(targetFile);
+			outputStream.write(buffer);
+			outputStream.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return new File(path);
 	}
 
 	@Override
 	public Iterator<Content> getIterator(Contents c, String path, String branch) {
 		Iterator<Content> result = null;
 		try {
-			result =  c.iterate(path, branch).iterator();
+			result = c.iterate(path, branch).iterator();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
