@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 
 import com.jcabi.github.Content;
@@ -89,8 +90,14 @@ public class CopierImpl implements Copier {
 
 	@Override
 	public ArrayList<File> getListOfDirectories(String directoryPath) {
-		
-		return null;
+		File directory = new File(directoryPath);
+		ArrayList<File> resultList = new ArrayList<File>(Arrays.asList(directory.listFiles()));
+		for (int i = 0; i < resultList.size(); i++) {
+			if (!resultList.get(i).isDirectory()) {
+				resultList.remove(i);
+			}
+		}
+		return resultList;
 	}
 
 }
