@@ -1,6 +1,7 @@
 
 package copierCore;
 
+import java.io.File;
 import java.io.InputStream;
 import java.util.Iterator;
 
@@ -38,7 +39,7 @@ public interface Copier {
 	 * @param is InputStream that need to be written into a file
 	 * @param path Path where the file needs to be written
 	 */
-	public void writeStream(InputStream is, String path);
+	public File writeStream(InputStream is, String path);
 	
 	/**
 	 * Returns an Iterator that holds Content objects
