@@ -121,4 +121,20 @@ public class CopierTest extends BasicTest {
 		valueActual = copier.getRepoName(repo);
 		test();
 	}
+
+	@Test
+	public void testsGetListOfDirectories() {
+		copier = new CopierImpl();
+		ArrayList<File> array = new ArrayList<File>();
+		array.set(0, new File("Test/FolderOne"));
+		array.set(1, new File("Test/FolderTwo"));
+		
+		valueExpected = array.get(1);
+		valueActual = copier.getListOfDirectories(new File("Test"));
+		test();
+		
+		valueExpected = 2;
+		valueActual = copier.getListOfDirectories(new File("Test")).size();
+		test();
+	}
 }
