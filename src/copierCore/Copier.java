@@ -45,7 +45,7 @@ public interface Copier {
 	/**
 	 * Writes target directory on Github into the local directory
 	 */
-	public void writeDirectory();
+	public void writeDirectory(Contents contents);
 	
 	/**
 	 * Returns an Iterator that holds Content objects
