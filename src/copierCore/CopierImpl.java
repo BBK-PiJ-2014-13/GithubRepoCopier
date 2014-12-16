@@ -17,12 +17,15 @@ import com.jcabi.github.Repo;
 import com.jcabi.github.RtGithub;
 
 public class CopierImpl implements Copier {
-
+	private Github github;
+	private Repo repository;
+	Contents repositoryContents;
+	
 	@Override
 	public void copier(String s) {
-		Github github = new RtGithub();
-		Repo repository = github.repos().get(new Coordinates.Simple("s"));
-		Contents repositoryContents = repository.contents();
+		github = new RtGithub();
+		repository = github.repos().get(new Coordinates.Simple("s"));
+		repositoryContents = repository.contents();
 	}
 
 	@Override
