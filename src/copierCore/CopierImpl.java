@@ -59,14 +59,14 @@ public class CopierImpl implements Copier {
 	}
 
 	@Override
-	public void writeDirectory(Contents contents, String path) {
+	public void writeDirectory(String path) {
 		try {
-			Iterator<Content> directoryContents = getIterator(contents, path,
+			Iterator<Content> directoryContents = getIterator(repositoryContents, path,
 					"master");
 
 			do {
 				File currentFile = new File(directoryContents.next().path());
-				Content currentFileContent = contents
+				Content currentFileContent = repositoryContents
 						.get(currentFile.getPath());
 				writeContent(currentFileContent);
 			} while (directoryContents.hasNext());
@@ -109,7 +109,6 @@ public class CopierImpl implements Copier {
 	@Override
 	public boolean goThroughDirectories(boolean hasMoreDirectories,
 			String currentDirectory) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
