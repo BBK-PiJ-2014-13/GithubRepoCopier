@@ -24,7 +24,7 @@ public class CopierImpl implements Copier {
 	@Override
 	public void launch(String s) {
 		github = new RtGithub();
-		repository = github.repos().get(new Coordinates.Simple("s"));
+		repository = github.repos().get(new Coordinates.Simple(s));
 		repositoryContents = repository.contents();
 		goThroughDirectories("");
 	}
