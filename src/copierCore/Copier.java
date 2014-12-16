@@ -33,12 +33,16 @@ public interface Copier {
 	public Contents getContents(Repo r);
 	
 	/**
+	 * Writes a stream of bytes into a file
+	 * 
 	 * @param is InputStream that need to be written into a file
 	 * @param s Path where the file needs to be written
 	 */
 	public void writeStream(InputStream is, String s);
 	
 	/**
+	 * Returns an Iterator that holds Content objects
+	 * 
 	 * @param c Contents from which an Iterator must be created
 	 */
 	public Iterator<Content> getIterator(Contents c, String path, String branch);
