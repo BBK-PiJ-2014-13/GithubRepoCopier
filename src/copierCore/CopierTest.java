@@ -72,7 +72,7 @@ public class CopierTest extends BasicTest {
 		bufferedReader.close();
 		
 		inputStream = content.raw();
-		File returnFile = copier.writeStream(inputStream, content.path());
+		File returnFile = copier.writeContent(content);
 		bufferedReader = new BufferedReader(new FileReader(returnFile));
 		valueActual = bufferedReader.readLine();
 		bufferedReader.close();
