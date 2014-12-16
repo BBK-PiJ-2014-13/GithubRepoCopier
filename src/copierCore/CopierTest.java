@@ -7,6 +7,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 
 import org.junit.Test;
@@ -81,13 +83,23 @@ public class CopierTest extends BasicTest {
 		test();
 	}
 
-	public void testsWriteDirectory() {
-		copier = new CopierImpl();
-		github = new RtGithub();
-		repo = copier.getRepo("BBK-PiJ-2014-13/Test");
-		contents = copier.getContents(repo);
-		iterator = copier.getIterator(contents, repo.coordinates()., "master");
+	@Test
+	public void testsWriteDirectory() throws IOException {
+		copier.writeDirectory();
 		
+		File directory = new File("Test");
+		ArrayList<File> fileNames = new ArrayList<File>(Arrays.asList(directory.listFiles()));
+		valueExpected = "src";
+		valueActual = fileNames.get(1);
+		test();
+		
+		valueExpected = ".classpath";
+		valueActual = fileNames.get(2);
+		test();
+		
+		valueExpected = "test.txt";
+		valueActual = fileNames.get(5);
+		test();
 	}
 	
 	@Test
