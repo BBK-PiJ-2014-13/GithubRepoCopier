@@ -49,7 +49,7 @@ public class CopierImpl implements Copier {
 	}
 	
 	@Override
-	public void writeDirectory(Contents contents) {
+	public void writeDirectory(Contents contents, String path) {
 		try {
 			Iterator<Content> directoryContents = getIterator(contents, path, branch)
 		} catch (IOException e) {
