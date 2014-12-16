@@ -43,6 +43,11 @@ public interface Copier {
 	public File writeStream(InputStream is, String path);
 	
 	/**
+	 * Writes target directory on Github into the local directory
+	 */
+	public void writeDirectory();
+	
+	/**
 	 * Returns an Iterator that holds Content objects
 	 * 
 	 * @param c Contents from which an Iterator must be created
