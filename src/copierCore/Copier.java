@@ -79,5 +79,5 @@ public interface Copier {
 	 * @param currentDirectory The directory method is currently working on
 	 * @return The same boolean as in parameter
 	 */
-	public void goThroughDirectories(boolean hasMoreDirectories, String currentDirectory);
+	public void goThroughDirectories(String currentDirectory);
 }
