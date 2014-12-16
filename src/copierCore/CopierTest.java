@@ -130,11 +130,11 @@ public class CopierTest extends BasicTest {
 		array.set(1, new File("Test/FolderTwo"));
 		
 		valueExpected = array.get(1);
-		valueActual = copier.getListOfDirectories(new File("Test"));
+		valueActual = copier.getListOfDirectories("Test");
 		test();
 		
 		valueExpected = 2;
-		valueActual = copier.getListOfDirectories(new File("Test")).size();
+		valueActual = copier.getListOfDirectories("Test").size();
 		test();
 	}
 }
