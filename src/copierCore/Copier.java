@@ -2,7 +2,7 @@
 package copierCore;
 
 import java.io.File;
-import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 import com.jcabi.github.Content;
@@ -63,4 +63,10 @@ public interface Copier {
 	 * @return Name of the repository
 	 */
 	public String getRepoName(Repo repo);
+
+	/**
+	 * @param directory Directory that may contain other directories
+	 * @return ArrayList filled with directories or empty
+	 */
+	public ArrayList<File> getListOfDirectories(File directory);
 }
