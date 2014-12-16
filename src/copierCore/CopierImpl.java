@@ -22,10 +22,11 @@ public class CopierImpl implements Copier {
 	Contents repositoryContents;
 	
 	@Override
-	public void copier(String s) {
+	public void launch(String s) {
 		github = new RtGithub();
 		repository = github.repos().get(new Coordinates.Simple("s"));
 		repositoryContents = repository.contents();
+		goThroughDirectories("");
 	}
 
 	@Override
