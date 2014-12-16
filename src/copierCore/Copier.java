@@ -46,7 +46,7 @@ public interface Copier {
 	 * @param contents Contents of the directory
 	 * @param path Path of the directory
 	 */
-	public void writeDirectory(Contents contents, String path);
+	public void writeDirectory(String path);
 	
 	/**
 	 * @param contents Contents of a repository from which an Iterator must be created
