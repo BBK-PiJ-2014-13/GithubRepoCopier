@@ -78,7 +78,7 @@ public class CopierTest extends BasicTest {
 		bufferedReader.close();
 		test();
 	}
-
+	
 	public void testsWriteDirectory() throws IOException {
 		copier = new CopierImpl();
 		github = new RtGithub();
