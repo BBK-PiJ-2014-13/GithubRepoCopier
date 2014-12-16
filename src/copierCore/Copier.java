@@ -71,4 +71,13 @@ public interface Copier {
 	 * @return ArrayList filled with directories or empty
 	 */
 	public ArrayList<File> getListOfDirectories(String directoryPath);
+	
+	/**
+	 * method that copies every file in a repository, including subdirectories
+	 * 
+	 * @param hasMoreDirectories Boolean that shows if current directory has more subdirectories
+	 * @param currentDirectory The directory method is currently working on
+	 * @return The same boolean as in parameter
+	 */
+	public boolean goThroughDirectories(boolean hasMoreDirectories, String currentDirectory);
 }
