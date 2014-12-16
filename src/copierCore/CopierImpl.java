@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 import com.jcabi.github.Content;
@@ -84,6 +85,12 @@ public class CopierImpl implements Copier {
 	@Override
 	public String getRepoName(Repo repo) {
 		return repo.coordinates().repo();
+	}
+
+	@Override
+	public ArrayList<File> getListOfDirectories(File directory) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
