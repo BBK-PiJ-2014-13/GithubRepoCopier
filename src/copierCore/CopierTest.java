@@ -1,7 +1,9 @@
 package copierCore;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -63,9 +65,16 @@ public class CopierTest extends BasicTest {
 		OutputStream outputStream = new FileOutputStream(targetFile);
 		outputStream.write(buffer);
 		outputStream.close();
-		valueExpected = new File("targetFile.txt");
 		
-		valueActual = copier.writeStream(inputStream, "");
+		BufferedReader bufferedReader = new BufferedReader(new FileReader(targetFile));
+		valueExpected = bufferedReader.readLine();
+		bufferedReader.close();
+		
+		inputStream = content.raw();
+		File returnFile = copier.writeStream(inputStream, content.path());
+		bufferedReader = new BufferedReader(new FileReader(returnFile));
+		valueActual = bufferedReader.readLine();
+		bufferedReader.close();
 		test();
 	}
 	
