@@ -35,17 +35,20 @@ public class CopierImpl implements Copier {
 
 	@Override
 	public File writeContent(Content content) {
+		File output = null;
 		try {
+			InputStream is = content.raw();
 			byte[] buffer = new byte[is.available()];
 			is.read(buffer);
-			File targetFile = new File(path);
-			OutputStream outputStream = new FileOutputStream(path + targetFile.getName());
+			String newFilePath = content.repo() + "/" + content.path();
+			OutputStream outputStream = new FileOutputStream(newFilePath);
 			outputStream.write(buffer);
 			outputStream.close();
+			output = new File(newFilePath);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return new File(path);
+		return output;
 	}
 
 	@Override
@@ -56,9 +59,11 @@ public class CopierImpl implements Copier {
 
 			do {
 				File currentFile = new File(directoryContents.next().path());
-				Content currentFileContent = contents.get(currentFile.getPath());
+				Content currentFileContent = contents
+						.get(currentFile.getPath());
 				InputStream currentFileStream = currentFileContent.raw();
-				writeContent(currentFileStream, getRepoName(contents.repo()) + "/" + path);
+				writeContent(currentFileStream, getRepoName(contents.repo())
+						+ "/" + path);
 			} while (directoryContents.hasNext());
 		} catch (IOException e) {
 			e.printStackTrace();
