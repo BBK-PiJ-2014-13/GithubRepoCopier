@@ -54,4 +54,11 @@ public interface Copier {
 	 */
 	public Iterator<Content> getIterator(Contents c, String path, String branch);
 	
+	/**
+	 * Returns the name of repository
+	 * 
+	 * @param repo Repo object
+	 * @return Name of the repository
+	 */
+	public String getRepoName(Repo repo);
 }
