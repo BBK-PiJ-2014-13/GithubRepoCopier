@@ -12,6 +12,11 @@ import com.jcabi.github.Repo;
 import com.jcabi.github.RtGithub;
 
 public class CopierImpl implements Copier {
+	
+	@Override
+	public void copier(String s) {
+		
+	}
 
 	@Override
 	public Repo getRepo(String s) {
