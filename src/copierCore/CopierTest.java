@@ -102,9 +102,14 @@ public class CopierTest extends BasicTest {
 		test();
 	}
 
+	@Test
 	public void testsGetRepoName() {
 		copier = new CopierImpl();
 		github = new RtGithub();
 		repo = github.repos().get(new Coordinates.Simple("BBK-PiJ-2014-13/Test"));
+		valueExpected = "Test";
+		
+		valueActual = copier.getRepoName(repo);
+		test();
 	}
 }
