@@ -1,5 +1,6 @@
 package copierCore;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Iterator;
@@ -31,9 +32,8 @@ public class CopierImpl implements Copier {
 	}
 
 	@Override
-	public void writeStream(InputStream is, String path) {
-		// TODO Auto-generated method stub
-		
+	public File writeStream(InputStream is, String path) {
+		return null;
 	}
 
 	@Override
