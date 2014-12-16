@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Iterator;
 
 import org.junit.Test;
 
@@ -21,6 +22,8 @@ public class CopierTest extends BasicTest {
 	CopierImpl copier;
 	Github github;
 	Repo repo;
+	Contents contents;
+	Iterator iterator;
 	
 	@Test
 	public void testsCopier() {
@@ -76,6 +79,15 @@ public class CopierTest extends BasicTest {
 		valueActual = bufferedReader.readLine();
 		bufferedReader.close();
 		test();
+	}
+
+	public void testsWriteDirectory() {
+		copier = new CopierImpl();
+		github = new RtGithub();
+		repo = copier.getRepo("BBK-PiJ-2014-13/Test");
+		contents = copier.getContents(repo);
+		iterator = copier.getIterator(contents, repo.coordinates()., "master");
+		
 	}
 	
 	@Test
