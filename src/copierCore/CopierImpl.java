@@ -47,7 +47,13 @@ public class CopierImpl implements Copier {
 		}
 		return new File(path);
 	}
-
+	
+	@Override
+	public void writeDirectory() {
+		// TODO Auto-generated method stub
+		
+	}
+	
 	@Override
 	public Iterator<Content> getIterator(Contents c, String path, String branch) {
 		Iterator<Content> result = null;
