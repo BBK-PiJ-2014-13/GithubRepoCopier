@@ -17,6 +17,8 @@ public class CopierTest extends BasicTest {
 	
 	@Test
 	public void testsCopier() {
+		valueExpected = 0;
+		valueActual = 1;
 		test();
 	}
 	
@@ -44,6 +46,8 @@ public class CopierTest extends BasicTest {
 	
 	@Test
 	public void testsWriteStream() {
+		valueExpected = 1;
+		valueActual = 0;
 		copier = new CopierImpl();
 		github = new RtGithub();
 		repo = github.repos().get(new Coordinates.Simple("BBK-PiJ-2014-13/Test"));
