@@ -48,11 +48,12 @@ public interface Copier {
 	public void writeDirectory(Contents contents);
 	
 	/**
-	 * Returns an Iterator that holds Content objects
-	 * 
-	 * @param c Contents from which an Iterator must be created
+	 * @param contents Contents of a repository from which an Iterator must be created
+	 * @param path Path of the directory
+	 * @param branch Branch
+	 * @return Iterator that holds Content objects of chosen directory
 	 */
-	public Iterator<Content> getIterator(Contents c, String path, String branch);
+	public Iterator<Content> getIterator(Contents contents, String path, String branch);
 	
 	/**
 	 * Returns the name of repository
