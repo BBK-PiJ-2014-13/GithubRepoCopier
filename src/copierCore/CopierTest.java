@@ -27,14 +27,12 @@ public class CopierTest extends BasicTest {
 	Contents contents;
 	Iterator iterator;
 	
-	@Test
 	public void testsCopier() {
 		valueExpected = 0;
 		valueActual = 1;
 		test();
 	}
 	
-	@Test
 	public void testsGetRepo() {
 		copier = new CopierImpl();
 		valueActual = copier.getRepo("BBK-PiJ-2014-13/Test");
@@ -45,7 +43,6 @@ public class CopierTest extends BasicTest {
 		test();
 	}
 	
-	@Test
 	public void testsGetContents() {
 		copier = new CopierImpl();
 		github = new RtGithub();
@@ -56,7 +53,6 @@ public class CopierTest extends BasicTest {
 		test();
 	}
 	
-	@Test
 	public void testsWriteStream() throws IOException {
 		copier = new CopierImpl();
 		github = new RtGithub();
@@ -83,13 +79,12 @@ public class CopierTest extends BasicTest {
 		test();
 	}
 
-	@Test
 	public void testsWriteDirectory() throws IOException {
 		copier = new CopierImpl();
 		github = new RtGithub();
 		repo = copier.getRepo("BBK-PiJ-2014-13/Test");
 		contents = copier.getContents(repo);
-		copier.writeDirectory(contents);
+		copier.writeDirectory(contents, "");
 		
 		File directory = new File("Test");
 		ArrayList<File> fileNames = new ArrayList<File>(Arrays.asList(directory.listFiles()));
@@ -106,7 +101,6 @@ public class CopierTest extends BasicTest {
 		test();
 	}
 	
-	@Test
 	public void testsGetIterator() throws IOException {
 		copier = new CopierImpl();
 		github = new RtGithub();
@@ -118,7 +112,6 @@ public class CopierTest extends BasicTest {
 		test();
 	}
 
-	@Test
 	public void testsGetRepoName() {
 		copier = new CopierImpl();
 		github = new RtGithub();
