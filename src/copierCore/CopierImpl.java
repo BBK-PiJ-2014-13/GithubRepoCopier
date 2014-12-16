@@ -88,8 +88,8 @@ public class CopierImpl implements Copier {
 	}
 
 	@Override
-	public ArrayList<File> getListOfDirectories(File directory) {
-		// TODO Auto-generated method stub
+	public ArrayList<File> getListOfDirectories(String directoryPath) {
+		
 		return null;
 	}
 
