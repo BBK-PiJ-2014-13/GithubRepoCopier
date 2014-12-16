@@ -40,7 +40,7 @@ public interface Copier {
 	 * @param path Path where the file needs to be written
 	 * @return File that was just written
 	 */
-	public File writeStream(InputStream is, String path);
+	public File writeContent(InputStream is, String path);
 	
 	/**
 	 * Writes target directory in a repository into the local directory
