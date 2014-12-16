@@ -67,8 +67,7 @@ public class CopierImpl implements Copier {
 
 	@Override
 	public String getRepoName(Repo repo) {
-		// TODO Auto-generated method stub
-		return null;
+		return repo.coordinates().repo();
 	}
 
 }
