@@ -70,5 +70,5 @@ public interface Copier {
 	 * @param directory Directory that may contain other directories
 	 * @return ArrayList filled with directories or empty
 	 */
-	public ArrayList<File> getListOfDirectories(File directory);
+	public ArrayList<File> getListOfDirectories(String directoryPath);
 }
