@@ -88,10 +88,12 @@ public class CopierImpl implements Copier {
 		return repo.coordinates().repo();
 	}
 
+	
 	@Override
 	public ArrayList<File> getListOfDirectories(String directoryPath) {
 		File directory = new File(directoryPath);
-		ArrayList<File> resultList = new ArrayList<File>(Arrays.asList(directory.listFiles()));
+		ArrayList<File> resultList = new ArrayList<File>(
+				Arrays.asList(directory.listFiles()));
 		for (int i = 0; i < resultList.size(); i++) {
 			if (!resultList.get(i).isDirectory()) {
 				resultList.remove(i);
