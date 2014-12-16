@@ -114,7 +114,7 @@ public class CopierImpl implements Copier {
 			return;
 		} else {
 			for (int i = 0; i < listOfDirectories.size(); i++) {
-				goThroughDirectories(currentDirectory);
+				goThroughDirectories(listOfDirectories.get(i).getPath());
 			}
 		}
 	}
