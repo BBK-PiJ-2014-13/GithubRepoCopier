@@ -107,7 +107,7 @@ public class CopierImpl implements Copier {
 
 
 	@Override
-	public boolean goThroughDirectories(boolean hasMoreDirectories,
+	public void goThroughDirectories(boolean hasMoreDirectories,
 			String currentDirectory) {
 		writeDirectory(currentDirectory);
 		ArrayList<File> listOfDirectories = getListOfDirectories(currentDirectory);
