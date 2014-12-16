@@ -50,7 +50,11 @@ public class CopierImpl implements Copier {
 	
 	@Override
 	public void writeDirectory(Contents contents) {
-		
+		try {
+			Iterator<Content> directoryContents = getIterator(contents, path, branch)
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	@Override
