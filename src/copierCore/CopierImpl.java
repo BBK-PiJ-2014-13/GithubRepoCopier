@@ -101,6 +101,7 @@ public class CopierImpl implements Copier {
 		for (int i = 0; i < resultList.size(); i++) {
 			if (!resultList.get(i).isDirectory()) {
 				resultList.remove(i);
+				i--;
 			}
 		}
 		return resultList;
