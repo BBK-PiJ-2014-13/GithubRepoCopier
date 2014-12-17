@@ -50,7 +50,7 @@ public class CopierImpl implements Copier {
 			InputStream is = content.raw();
 			byte[] buffer = new byte[is.available()];
 			is.read(buffer);
-			String newFilePath = content.repo() + "/" + content.path();
+			String newFilePath = repoPath + content.path();
 			OutputStream outputStream = new FileOutputStream(newFilePath);
 			outputStream.write(buffer);
 			outputStream.close();
