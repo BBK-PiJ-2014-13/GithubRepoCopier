@@ -63,12 +63,16 @@ public class CopierImpl implements Copier {
 
 	@Override
 	public void writeDirectory(String path) {
+		String pathInRepo = path + repoPath;
 		try {
-			Iterator<Content> directoryContents = getIterator(repositoryContents, path,
+			Iterator<Content> directoryContents = getIterator(repositoryContents, pathInRepo,
 					"master");
-
 			do {
-				File currentFile = new File(directoryContents.next().path());
+				if (!directoryContents.hasNext()) {
+					return;
+				}
+				Content nextContent = directoryContents.next();
+				File currentFile = new File(nextContent.path());
 				Content currentFileContent = repositoryContents
 						.get(currentFile.getPath());
 				writeContent(currentFileContent);
